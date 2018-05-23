@@ -1,6 +1,6 @@
 import unittest
-from first_option import calculate_probability_failure
-import second_option
+from first_algorithm import calculate_probability_failure
+import second_algorithm
 
 data1 = [[1, 2, 3, 4, 5],
          [1, 2, 3, 4, 5],
@@ -37,8 +37,8 @@ class CalcTests(unittest.TestCase):
          Проверяем второй вариант алгоритма (переводом серверов в последовательность бит)
           на зеркальных данных из задания
         """
-        translated = second_option.translate_servers(data1)
-        result = second_option.calculate_probability_failure(translated)
+        translated = second_algorithm.translate_servers(data1)
+        result = second_algorithm.calculate_probability_failure(translated)
         self.assertEqual(result[0], 20)
 
     def test_rand_second_option_probability_calc(self):
@@ -46,8 +46,8 @@ class CalcTests(unittest.TestCase):
          Проверяем второй вариант алгоритма (переводом серверов в последовательность бит)
           на случайных данных из задания
         """
-        translated = second_option.translate_servers(data2)
-        result = second_option.calculate_probability_failure(translated)
+        translated = second_algorithm.translate_servers(data2)
+        result = second_algorithm.calculate_probability_failure(translated)
         self.assertEqual(result[0], 80)
 
 

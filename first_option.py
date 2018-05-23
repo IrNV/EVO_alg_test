@@ -131,4 +131,5 @@ if __name__ == "__main__":
 
         result = calculate_probability_failure(servers)
         for key in result:
-            print("Killing {} arbitrary servers results in data loss in {} cases".format(key + 1, result[key]))
+            print("Killing {} arbitrary servers results in data loss in {}% cases".format(key + 1,
+                                                                                          round(result[key], 2)))

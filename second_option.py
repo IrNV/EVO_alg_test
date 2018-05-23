@@ -1,3 +1,13 @@
+"""
+Файд second_option содержит 2-й вариант алгоритма, в котором сервера представлены как последовательность бит:
+server_1 = [1, 2, 4, 6] -> 0b101011.
+Благодаря этому мы можем без цикла узнать есть ли на 2-м сервере реплики из 1-го:
+result = bit_server1 & bit_server2 если != 0, то у них есть общие реплики
+Затем
+bit_server1 = bit_server & (~ result) - удаляем реплики, местоположение которых уже определили
+bit_server2 = bit_server & (~ result) - так же удаляем реплики.
+и продолжаем, пока bit_server1 не станет == 0. Затем переходим к следующему серверу и повторяем процедуру
+"""
 from first_option import generate_servers, generate_mirror
 from copy import deepcopy
 import sys
